@@ -7,7 +7,8 @@ public class algoritmo {
     private double[] peso; //Coste del enlace
     private int[] previo; //Aquí se actualizara el nodo
     private Integer nodoL; //Para ubicar al nodo
-
+    
+    //Constructor
     public algoritmo(double[][] matriz) {
         this.matriz = matriz;
         this.peso = new double[nodoL];
@@ -15,7 +16,7 @@ public class algoritmo {
         this.nodoL = matriz.length;
     }
     
-    public void ejecutaBF (double[][]A,int origen){
+    public void ejecutaBF (int origen){
         //Para el inicio de la tabla, se iniciliza de la sgte manera:
         //los pasos de relajación seran |V| - 1 veces
         for (int i=0; i < nodoL; i++)
@@ -48,7 +49,7 @@ public class algoritmo {
             imprimir();
         }
     }
-    
+    //Para detectar si existe o no ciclos negativos en el grafo
     public boolean existeCicloNeg()
     {
         boolean resp = false; //Se asume que en un inicio no existen ciclos negativos
