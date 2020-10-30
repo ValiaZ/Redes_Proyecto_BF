@@ -5,7 +5,7 @@
 public class algoritmo {
     private double[][] matriz; //Derivada del grafo
     private double[] peso; //Coste del enlace
-    private int[] previo; //Aquí se actualizara el nodo
+    private int[] previo; //Aquí se actualizara el nodo previo
     private Integer nodoL; //Para ubicar al nodo
     
     //Constructor
@@ -60,6 +60,7 @@ public class algoritmo {
                     //aplicamos paso de relajación
                     if (peso[m] + matriz[m][n] < peso[n])
                     {
+                        //Si es posivito, hemos detectado un ciclo negativo
                         resp = true;
                         System.out.println("Existe ciclo negativo");
                     }
@@ -71,8 +72,8 @@ public class algoritmo {
     
     public void imprimir() {
         for (int i = 0; i < nodoL; i++) {
-            String p = (peso[i] == Double.POSITIVE_INFINITY ? "INF" : String.valueOf(peso[i]));
-            System.out.println(i + "-[Previo: " + previo[i] + ", DISTANCIA: "+ p + "] ");
+            String p = (peso[i] == Double.POSITIVE_INFINITY ? "INFINITO" : String.valueOf(peso[i]));
+            System.out.println(i + "| [NODO PREVIO: " + previo[i] + "| DISTANCIA: "+ p + "] |");
         }
         System.out.println("\n");
     }
