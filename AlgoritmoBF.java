@@ -5,7 +5,7 @@
 
 public class Trabajo_Redes {
    
-    public static void algoritmoBF (int[][]A, int origen)
+   public static void algoritmoBF (int[][]A, int origen)
     {
         //Inicializamos de acuerdo al grafo ingresado
         //Creamos una lista para almacenar los pesos de las distancias entre cada nodo
@@ -20,7 +20,7 @@ public class Trabajo_Redes {
          for (int i = 0; i < previo.length; i++) {
              previo[i] = -1;
          }
-         //Siempre la distancia de origen en si mismo es 0
+         //Siempre la distancia de origen es 0
          distancia[origen] = 0; 
          //Imprimimos la tabla al inicio (antes de la ejecucion)
          printGrafo(A,distancia, previo,0);
@@ -47,8 +47,11 @@ public class Trabajo_Redes {
                         }
                     }
                 }
-                printGrafo(A,distancia, previo,j+1);
+                //En el caso que se quiera ver el paso a paso de cada iteracion
+                //printGrafo(A,distancia, previo,j+1);
             }
+            //Para imprimir el resultado final de cada iteracion
+            printGrafo(A,distancia, previo,j+1);
          }
          if (existeCicloNeg(A,distancia,previo) == true)
             {
@@ -143,8 +146,10 @@ public class Trabajo_Redes {
         System.out.println("|||| ALGORITMO BELLMAN FORD PARA GRAFO DE 8 NODOS ||||");
         algoritmoBF(B,0);
         //Ejecutar grafo avanzado de 11 nodos
-        System.out.println("|||| LGORITMO BELLMAN FORD PARA GRAFO DE 11 NODOS ||||");
-        algoritmoBF(C,0);
+        System.out.println("|||| ALGORITMO BELLMAN FORD PARA GRAFO DE 11 NODOS ||||");
+        algoritmoBF(C,1);
         
+    }
+    
     }
 }
