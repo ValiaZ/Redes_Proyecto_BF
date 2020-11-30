@@ -3,6 +3,8 @@
  * @author LaptopValia
  */
 
+import java.util.Scanner;
+
 public class Trabajo_Redes {
    
    public static void algoritmoBF (int[][]A, int origen)
@@ -138,18 +140,32 @@ public class Trabajo_Redes {
                     {0,0,0,0,0,0,2,0,0,0,0},
                     {0,0,0,0,0,0,0,0,4,0,0},
                     {0,0,0,0,0,0,0,1,0,0,0}};
-        
+              
+        //Para que ingrese el nodo origen:
+        Scanner entrada1 = new Scanner(System.in);
+        int n; //Definimos el numero de nodo a ingresar como entero
+        System.out.print("Ingrese nodo origen para el grafo de 5 nodos: ");
+        n = entrada1.nextInt();
+        //Ya con el nodo origen elegido, procedemos a calcular en los grafos de 5, 8 y 11 nodos.
         //Ejecutar grafo basico de 5 nodos
         System.out.println("|||| ALGORITMO BELLMAN FORD PARA GRAFO DE 5 NODOS ||||");
-        algoritmoBF(A,0);
+        algoritmoBF(A,n-1);
+        
+        Scanner entrada2 = new Scanner(System.in);
+        int x; //Definimos el numero de nodo a ingresar como entero
+        System.out.print("Ingrese nodo origen para el grafo de 8 nodos: ");
+        x = entrada2.nextInt();
         //Ejecutar grafo intermedio de 8 nodos
         System.out.println("|||| ALGORITMO BELLMAN FORD PARA GRAFO DE 8 NODOS ||||");
-        algoritmoBF(B,0);
+        algoritmoBF(B,x-1);
+                 
+        Scanner entrada3 = new Scanner(System.in);
+        int y; //Definimos el numero de nodo a ingresar como entero
+        System.out.print("Ingrese nodo origen para el grafo de 11 nodos: ");
+        y = entrada3.nextInt();
         //Ejecutar grafo avanzado de 11 nodos
         System.out.println("|||| ALGORITMO BELLMAN FORD PARA GRAFO DE 11 NODOS ||||");
-        algoritmoBF(C,1);
-        
+        algoritmoBF(C,y-1);
     }
-    
-    }
+  
 }
